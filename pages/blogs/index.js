@@ -1,8 +1,10 @@
 import axios from "axios";
+import Layout from "../../containers/layout";
 const Blogs = ({ blogs }) => {
   console.log(blogs);
   return (
-    <div>
+    <Layout>
+      <div>
       <h1>Blogs List</h1>
       {blogs.map((blog) => {
         return (
@@ -14,6 +16,7 @@ const Blogs = ({ blogs }) => {
         );
       })}
     </div>
+    </Layout>
   );
 };
 

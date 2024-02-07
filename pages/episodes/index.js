@@ -1,11 +1,13 @@
 import axios from "axios";
 import Link from "next/link";
 import User from "../../components/User";
+import Layout from "../../containers/layout";
 const Episodes = (props) => {
   console.log(props);
   const data = props.episodeList.results;
   return (
-    <div>
+    <Layout>
+      <div>
       <h1>Episode list</h1>
       {data.map((episode) => {
         return (
@@ -19,6 +21,7 @@ const Episodes = (props) => {
         );
       })}
     </div>
+    </Layout>
   );
 };
 

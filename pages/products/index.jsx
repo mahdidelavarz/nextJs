@@ -1,9 +1,11 @@
 import axios from "axios";
 import Link from "next/link";
+import Layout from "../../containers/layout";
 const Products = (props) => {
   console.log(props);
   return (
-    <div>
+    <Layout>
+      <div>
       <h1>Products List</h1>
       <ul>
         {props.productList.map((product) => (
@@ -21,6 +23,7 @@ const Products = (props) => {
         ))}
       </ul>
     </div>
+    </Layout>
   );
 };
 

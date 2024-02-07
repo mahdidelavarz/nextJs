@@ -1,24 +1,22 @@
-// import axios from "axios";
-// const SingleTodo = ({ todo }) => {
-//   return (
-//     <div>
-//       <h1>{todo.title}</h1>
-//       <h4>{todo.description}</h4>
-//     </div>
-//   );
-// };
+import axios from "axios";
+import { getOneTodo } from "../api/todoList/[todoId]";
+const SingleTodo = ({ todo }) => {
+  return (
+    <div>
+      <h1>this is single Todo page </h1>
+      <h2>{todo.title}</h2>
+      <h4>{todo.description}</h4>
+    </div>
+  );
+};
 
-// export default SingleTodo;
+export default SingleTodo;
 
-// export async function getServerSideProps({ params }) {
-//   const { data } = await axios.get(
-//     `http://localhost:3000/api/todoList/${params.todoId}`
-//   );
-//   console.log(data);
-//   return {
-//     props: {
-//       todo: data,
-//     },
-//   };
-// }
-
+export async function getServerSideProps({ params, query }) {
+  const todo = await getOneTodo(query);
+  return {
+    props: {
+      todo: JSON.parse(JSON.stringify(todo)),
+    },
+  };
+}

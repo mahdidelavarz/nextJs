@@ -1,15 +1,18 @@
 import axios from "axios";
 import User from "../../components/User";
+import Layout from "../../containers/layout";
 const UsersList = (props) => {
   console.log(props);
   const data = props.dataList.results;
   return (
-    <div>
-      <h1>Users list</h1>
-      {data.map((user) => {
-        return <User user={user} key={user.id} />;
-      })}
-    </div>
+    <Layout>
+      <div>
+        <h1>Users list</h1>
+        {data.map((user) => {
+          return <User user={user} key={user.id} />;
+        })}
+      </div>
+    </Layout>
   );
 };
 

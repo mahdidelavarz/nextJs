@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import Layout from "../../containers/layout";
 function Posts() {
   return (
-    <div>
+    <Layout>
+      <div>
       <h1>this is Post page</h1>
       <ul>
         <li>
@@ -25,6 +27,7 @@ function Posts() {
         </li>
       </ul>
     </div>
+    </Layout>
   );
 }
 
